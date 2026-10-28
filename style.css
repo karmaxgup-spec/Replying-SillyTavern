@@ -1,0 +1,194 @@
+/* Reply Queue — styles */
+
+/* Composer area above the send bar */
+#rq_container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0 6px;
+}
+
+#rq_replybar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    border-left: 3px solid #3979A8;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, .06);
+    font-size: 12px;
+}
+
+#rq_replybar[hidden],
+#rq_queue[hidden] {
+    display: none;
+}
+
+.rq-bar-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.rq-bar-label {
+    font-weight: 600;
+    color: #8ab4f8;
+}
+
+.rq-bar-preview {
+    opacity: .8;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.rq-icon-btn {
+    background: none;
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+    padding: 4px 6px;
+    opacity: .7;
+    font-size: 13px;
+}
+
+/* Queued messages */
+#rq_queue {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-height: 30vh;
+    overflow-y: auto;
+}
+
+.rq-queued {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .06);
+    font-size: 13px;
+}
+
+.rq-queued-tag {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    opacity: .6;
+}
+
+.rq-queued-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.rq-queued-reply {
+    font-size: 11px;
+    opacity: .7;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-left: 2px solid #3979A8;
+    padding-left: 6px;
+    margin-bottom: 2px;
+}
+
+.rq-queued-text {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+/* Reply header shown above a message */
+.rq-reply-header {
+    display: flex;
+    gap: 6px;
+    align-items: baseline;
+    max-width: 100%;
+    margin: 0 0 4px;
+    padding: 4px 8px;
+    border-left: 3px solid #3979A8;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, .06);
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.rq-reply-name {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.rq-reply-preview {
+    min-width: 0;
+    opacity: .75;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.rq-flash {
+    animation: rq-flash 1.2s ease-out;
+}
+
+@keyframes rq-flash {
+    from { background: rgba(57, 121, 168, .35); }
+    to   { background: transparent; }
+}
+
+/* Long-press reply popup */
+#rq_menu_overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background: rgba(0, 0, 0, .45);
+}
+
+.rq-menu {
+    width: min(340px, 100%);
+    padding: 16px;
+    border-radius: 14px;
+    background: #22262e;
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .5);
+}
+
+.rq-menu-title {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.rq-menu-quote {
+    max-height: 8em;
+    overflow: hidden;
+    margin-bottom: 14px;
+    padding: 6px 10px;
+    border-left: 3px solid #3979A8;
+    font-size: 13px;
+    opacity: .85;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.rq-menu-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.rq-menu-btn {
+    padding: 7px 16px;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .12);
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.rq-menu-btn.rq-primary {
+    background: #087fca;
+}
